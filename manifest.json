@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Virtual file system",
+  "description": "view a web page as directory",
+  "version": "1.0",
+
+  "browser_action": {
+
+    "default_popup": "popup.html"
+  },
+    "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+
+      "js": ["common.js","ext.js", "contentscript.js"]
+    }
+  ],
+    "background": {
+    "scripts": ["common.js","ext.js", "background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab","contextMenus"
+  ]
+}
